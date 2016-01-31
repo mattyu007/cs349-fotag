@@ -1,0 +1,749 @@
+/* ============== GENERAL BODY DEFINITION ============== */
+
+@font-face {
+	font-family: lato;
+	src: url(../fonts/Lato-Light.ttf);
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: lato;
+	src: url(../fonts/Lato-Regular.ttf);
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: lato;
+	src: url(../fonts/Lato-Bold.ttf);
+	font-weight: 700;
+}
+
+body {
+	font-family: lato, 'Avenir Next', sans-serif;
+	font-size: 12pt;
+    -webkit-font-smoothing: subpixel-antialiased;
+	
+	background-color: #f0f0f0;
+	
+	margin: 0;
+	padding: 0;
+	padding-top: 74px;
+}
+
+
+/* =================== HELPER CLASSES ================== */
+
+.hidden {
+	visibility: hidden !important;
+}
+
+.nodisplay {
+	display: none !important;
+}
+
+.clear-float {
+	clear: both;
+	margin: 0;
+	padding: 0;
+}
+
+@-webkit-keyframes ft-keyframes-content-show {
+	0% {opacity: 0; -webkit-transform: scale(1.05, 1.05);}
+}
+
+@keyframes ft-keyframes-content-show {
+	0% {opacity: 0; transform: scale(1.05, 1.05);}
+}
+
+@-webkit-keyframes ft-keyframes-hide {
+	100% {opacity: 0;}
+}
+
+@keyframes ft-keyframes-hide {
+	100% {opacity: 0;}
+}
+
+@-webkit-keyframes ft-keyframes-background-show {
+	0% {background-color: rgba(0, 0, 0, 0);}
+}
+
+@keyframes ft-keyframes-background-show {
+	0% {background-color: rgba(0, 0, 0, 0);}
+}
+
+
+/* ===================== BUTTONS ==================== */
+
+.btn {
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	background-color: #265566;
+	border: 1px solid #1f4653;
+	box-shadow: 0px 0px 2px #c0c0c0;
+	border-radius: 4px;
+	padding: 3px 8px 5px;
+	margin: 4px 2px;
+	min-width: 10ex;
+	font: inherit;
+/*	font-size: 90%;*/
+	text-align: center;
+	vertical-align: middle;
+/*	border: 1px solid #4FA2A6;*/
+}
+
+.btn:disabled {
+	cursor: default;
+	color: #f0f0f0;
+	background-color: #9dcada !important; /* !important to override :hover */
+	border: 1px solid #78b6cc !important;
+}
+
+.btn:hover {
+	background-color: #183641;
+	border: 1px solid #1f4653;
+	box-shadow: 0px 0px 2px #c0c0c0;
+}
+
+.btn-light {
+	background-color: #f5eee2;
+	border: 1px solid #c0c0c0;
+	color: #000000;
+}
+
+.btn-light:hover {
+	background-color: #eee2d0;
+	border: 1px solid #c0c0c0;
+}
+
+.btn-light:disabled {
+	cursor: default;
+	color: #cccccc;
+	background-color: #fcf9f5 !important;
+	border: 1px solid #d0d0d0 !important;
+}
+
+.btn-danger {
+	background-color: #d12b2b;
+	border: 1px solid #bc2727;
+	color: #ffffff;
+}
+
+.btn-danger:hover {
+	background-color: #bc2727;
+	border: 1px solid #a72222;
+}
+
+.btn-danger:disabled {
+	cursor: default;
+	color: #f0f0f0;
+	background-color: #eda7a7 !important;
+	border: 1px solid #e99292 !important;
+}
+
+.btn-tight {
+	padding: 3px 3px 1px;
+	min-width: 0;
+}
+
+.btn-small {
+	/* From .btn-tight */
+	padding: 3px 3px 1px;
+	min-width: 0;
+	
+	border-radius: 3px;
+	font-size: 10pt;
+}
+
+/* Same as .btn */
+button {
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	background-color: #265566;
+	border: 1px solid #1f4653;
+	box-shadow: 0px 0px 2px #c0c0c0;
+	border-radius: 4px;
+	padding: 3px 8px 5px;
+	margin: 4px 2px;
+	min-width: 10ex;
+	font: inherit;
+/*	font-size: 90%;*/
+	text-align: center;
+	vertical-align: middle;
+/*	border: 1px solid #4FA2A6;*/
+}
+
+/* Same as .btn:disabled */
+button:disabled {
+	cursor: default;
+	color: #f0f0f0;
+	background-color: #9dcada !important; /* !important to override :hover */
+	border-color: #9dcada !important;
+}
+
+/* Same as .btn:hover */
+button:hover {
+	background-color: #183641;
+	border: 1px solid #1f4653;
+	box-shadow: 0px 0px 2px #c0c0c0;
+}
+
+/* ====================== HEADER ======================= */
+
+.ft-nav-fixed-top {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 50;
+	height: 68px;
+	padding-left: 15px;
+	padding-right: 15px;
+	color: white;
+	background-color: #163145;
+}
+
+.ft-nav-header {
+	float: left;
+	font-size: 32px;
+	font-weight: bold;
+	line-height: 68px;
+	text-transform: lowercase;
+}
+
+/* Visible Responsive Detector */
+/*.ft-nav-header {
+	background-color: #A72368;
+}
+.ft-nav-header:after {
+	content: " S";
+}
+@media screen and (min-width: 760px) {
+	.ft-nav-header {
+		background-color: #163145;
+	}
+	.ft-nav-header:after {
+		content: "";
+	}
+}*/
+/* End Responsive Detector */
+
+.ft-nav-options {
+	float: right;
+	padding-top: 4px;
+	padding-left: 10px;
+}
+
+.ft-nav-options-subhead {
+	font-size: 10pt;
+	max-height: 18px;
+	padding-bottom: 2px;
+	line-height: normal;
+	text-transform: uppercase;
+	margin: 0;
+}
+
+.ft-nav-options-subhead-left {
+	float: left;
+	padding: 1px;
+}
+.ft-nav-options-subhead-right {
+	float: right;
+	padding: 1px;
+}
+
+.ft-nav-options-items-rating {
+	overflow: hidden;
+	width: 100%;
+}
+
+.ft-nav-options-filter-clear-img {
+	padding: 0;
+	margin: 0;
+}
+
+.ft-nav-options-filter-clear-btn {
+/*	cursor: pointer;
+	color: #163145;
+	background-color: #E7D7BD;*/
+	position: relative;
+	top: -4px;
+}
+
+.ft-nav-options-view {
+	cursor: pointer;
+}
+.ft-nav-options-view-selected {
+	box-shadow: 0px 0px 2px 2px #ffffff !important;
+}
+.ft-nav-options-view:hover {
+	box-shadow: 0px 0px 2px 2px #aaaaaa;
+}
+
+
+
+.ft-container {
+	text-align: center;
+	clear: both;
+}
+
+
+/* For .ft-icv-item-container */
+.ft-container > div {
+	display: inline-block;
+	position: relative;
+}
+
+.ft-container-list-view {
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.ft-container-list-view > div:not(.ft-empty-container) {
+	display: inline-block;
+	position: relative;
+	left: -12px;
+	width: 85%;
+/*	max-width: 1000px;*/
+}
+/* End For .ft-icv-item-container */
+
+.ft-container-list-view .ft-item-delete-overlay {
+	right: -15px;
+}
+
+
+/* ======================= EMPTY ======================= */
+
+.ft-empty-container {
+	text-align: center;
+	color: #666666;
+	font-size: 150%;
+	padding-top: 50px;
+/*	margin-bottom: 50px;*/
+}
+
+.ft-empty-container > div {
+	padding: 25px initial;
+}
+
+.ft-empty-title {
+	font-size: 150%;
+	font-weight: bold;
+}
+
+.ft-empty-subtitle {
+	color: #888888;
+}
+
+/* Reduce padding on smaller displays */
+@media screen and (max-width: 759px) {
+	.ft-empty-container {
+		padding-top: 25px;
+/*		margin-bottom: 25px;*/
+	}
+	
+	.ft-empty-container > div {
+		padding: 15px initial;
+	}
+}
+
+
+/* ======================= ITEMS ======================= */
+
+@-webkit-keyframes ft-rise {
+	0%   {opacity: 0; top: 150px;} /* background-color: #ffff66;} */
+	65%  {opacity: 1; top: -15px}
+	100% {            top: 0px  ;} /* background-color: none}; */
+}
+
+@keyframes ft-rise {
+	0%   {opacity: 0; top: 150px;} /* background-color: #ffff66;} */
+	65%  {opacity: 1; top: -15px}
+	100% {            top: 0px  ;} /* background-color: none}; */
+}
+
+@-webkit-keyframes ft-rise-reverse {
+	100% {opacity: 0}
+	85%  {            top: 200px}
+	65%  {opacity: 0}
+	35%  {opacity: 1; top: -15px}
+	0%   {            top: 0px}
+}
+
+@keyframes ft-rise-reverse {
+	100% {opacity: 0}
+	85%  {            top: 200px}
+	65%  {opacity: 0}
+	35%  {opacity: 1; top: -15px}
+	0%   {            top: 0px}
+}
+
+/*.ft-icv-item-container {
+	-webkit-animation: ft-rise 1s ease 0s;
+	animation: ft-rise 1s ease 0s;
+}*/
+
+/* -new container used to stop animation during filtering */
+.ft-icv-item-container-new {
+	-webkit-animation: ft-rise 0.75s ease 0s;
+	animation: ft-rise 0.75s ease 0s;
+}
+
+.ft-icv-item-container-deleted {
+	-webkit-animation: ft-rise-reverse 0.75s ease 0s;
+	animation: ft-rise-reverse 0.75s ease 0s;
+}
+
+.ft-item {
+	display: inline-block;
+	position: relative;
+	vertical-align: top;
+	margin: 15px;
+	padding: 10px;
+	padding-bottom: 0px;
+	
+	min-width: 300px;
+	width: 300px;
+	max-width: 100%;
+	
+	text-align: center;
+	
+	background-color: #ffffff;
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.ft-item > * {
+	margin: 10px;
+}
+
+.ft-item-image-container {
+	cursor: pointer;
+	cursor: -webkit-zoom-in;
+}
+
+.ft-item-metadata-container > * {
+	margin-bottom: 10px;
+}
+
+.ft-item-metadata-container * {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* Items in List View should expand to fit when screen is small */
+.ft-item-list-view {
+	box-sizing: border-box;
+	width: 100%;
+}
+
+/* List View really only works for large screen sizes */
+@media screen and (min-width: 760px) {
+	.ft-item-list-view {
+		clear: both;
+		padding-left: 320px;
+		padding-bottom: 10px; /* to undo the 0px we set in .ft-item
+						         for the rating caption text space */
+	}
+	
+	.ft-item-list-view > * {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	
+	.ft-item-image-container-list-view {
+		display: block;
+		position: relative;
+		float: left;
+		width: 290px;
+		margin-left: -305px;
+	}
+	
+	.ft-item-metadata-container-list-view {
+		display: block;
+		position: relative;
+		float: left;
+		padding-left: 0px;
+		text-align: left;
+		width: 95%;
+	}
+}
+/* End List View */
+
+.ft-item-image {
+	max-width: 280px;
+/*	height: auto;*/
+	max-height: 280px;
+}
+
+.ft-item-caption {
+	cursor: pointer;
+	font-size: 150%;
+}
+
+.ft-item-name {
+	color: #666666;
+}
+
+.ft-item-date {
+	color: #666666;
+}
+
+.ft-item-rating {
+	cursor: pointer;
+	margin-bottom: 5px;
+}
+
+.ft-rating-caption {
+	text-transform: lowercase;
+	font-size: 75%;
+	margin: 0;
+}
+
+.caption-success {
+	background-color: rgba(118, 208, 204, 0.25); /* rgba(31, 255, 0, 0.25); */
+	color: #265566; /* rgba(15, 127, 0); */
+}
+
+.ft-star {
+	padding-left: 0;
+	padding-right: 0;
+	margin-left: 0;
+	margin-right: 0;
+	cursor: pointer;
+}
+
+
+/* ==================== ITEMS INPUT ==================== */
+
+.ft-item-caption-input-container {
+	display: block;
+	text-align: right;
+}
+
+.ft-item-caption-input {
+	display: block;
+	box-sizing: border-box; /* include padding and border in the '100%' */
+	width: 100%;
+	font: inherit;
+	font-size: 150%; /* From .ft-item-caption */
+}
+
+.ft-item-caption-save-btn {
+	margin-right: 0;
+}
+
+.ft-item-caption-cancel-btn {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+
+/* =================== ITEMS DELETE ==================== */
+
+.ft-item-delete-icon {
+	z-index: 48;
+	position: absolute;
+	top: 5px;  /* 1/2 of .ft-item margin */
+	left: 5px; /* 1/2 of .ft-item margin */
+	height: 24px;
+	width: 24px;
+	background-image: url('../item-delete.svg');
+	
+	-webkit-filter: drop-shadow(0px 0px 1px #000000);
+	
+	cursor: pointer;
+}
+
+.ft-item-delete-overlay {
+	z-index: 47;
+	position: absolute;
+	top: 14px; /* negative of padding */
+	bottom: 14px;
+	left: 14px;
+	right: 14px;
+	background-color: rgba(0, 0, 0, 0.75);
+	vertical-align: middle;
+	text-align: center;
+	
+	/* fade in */
+	-webkit-animation: ft-keyframes-background-show 0.2s ease 0s;
+	animation: ft-keyframes-background-show 0.2s ease 0s;
+}
+
+.ft-item-delete-overlay-content {
+	display: inline-block;
+	vertical-align: middle;
+	margin: auto;
+	max-width: 95%;
+	color: #ffffff;
+	
+	/* drop in */
+	-webkit-animation: ft-keyframes-content-show 0.2s ease 0s;
+	animation: ft-keyframes-content-show 0.2s ease 0s;
+}
+
+.ft-item-delete-overlay-content > * {
+	display: block;
+}
+
+.ft-item-delete-overlay-content * {
+	margin: 10px 10px;
+}
+
+.ft-item-delete-overlay-content-message {
+	font-size: 125%;
+}
+
+.ft-item-delete-hidden {
+	/* fade out */
+	-webkit-animation: ft-keyframes-hide 0.2s none 0s;
+	animation: ft-keyframes-hide 0.2s none 0s;
+}
+
+/* ==================== FILE INPUT ===================== */
+
+.ft-file-input-container {
+	display: block;
+	text-align: center;
+	color: #666666;
+	font-size: 150%;
+/*	background-color: #ececec;*/
+	border: 10px dashed #cccccc;
+	border-radius: 10px;
+	padding: 40px 20px;
+	margin: 60px 30px 30px;
+}
+
+.ft-file-input-container-dragging {
+	color: #ffffff;
+	background-color: #265566;
+}
+
+/* Reduce padding on smaller displays */
+@media screen and (max-width: 759px) {
+	.ft-file-input-container {
+		padding: 20px 20px;
+		margin: 40px 15px 30px;
+	}
+}
+
+/* Classes partially-derived from
+   http://www.abeautifulsite.net/whipping-file-inputs-into-shape-with-bootstrap-3/ */
+
+.btn-file-input {
+	position: relative;
+	overflow: hidden;
+}
+
+.ft-file-input {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: block;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	cursor: inherit;
+}
+
+
+
+/* ===================== LIGHTBOX ====================== */
+
+.lightbox {
+	z-index: 98;
+	position: fixed;
+	top: -100px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.75);
+	vertical-align: middle;
+	text-align: center;
+	
+	/* disable text selection */
+	-webkit-user-select: none;
+	user-select: none;
+	
+	/* fade in */
+	-webkit-animation: ft-keyframes-background-show 0.2s ease 0s;
+	animation: ft-keyframes-background-show 0.2s ease 0s;
+}
+
+.lightbox-center {
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+
+.lightbox-content {
+	display: inline-block;
+	box-sizing: border-box;
+	vertical-align: middle;
+	margin: auto;
+	margin-top: 100px;
+	max-height: 80%;
+	max-width: 90%;
+	border: 20px solid rgba(255, 255, 255, 0.75);
+	box-shadow: 0px 0px 7px 3px rgba(31, 31, 31, 0.75);
+	
+	/* drop in */
+	-webkit-animation: ft-keyframes-content-show 0.2s ease 0s;
+	animation: ft-keyframes-content-show 0.2s ease 0s;
+}
+
+@-webkit-keyframes lightbox-close-hint-show {
+	0% {opacity: 0.5; bottom: -40px;}
+}
+
+@keyframes lightbox-close-hint-show {
+	0% {opacity: 0.5; bottom: -40px;}
+}
+
+.lightbox-close-hint {
+	position: fixed;
+	bottom: 40px;
+	left: 50%;
+	width: 250px;
+	margin-left: -141px; /* [left posn] - [0.5(width) + padding-left] */
+	padding: 8px 16px;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: rgba(255, 255, 255, 0.75);
+	font-size: 12pt;
+	border: 1px solid rgba(255, 255, 255, 1);
+	border-radius: 5px;
+/*	cursor: pointer;*/
+
+	-webkit-animation: lightbox-close-hint-show 0.2s ease 0s;
+	animation: lightbox-close-hint-show 0.2s ease 0s;
+}
+
+/* Be more space-efficient on small screens*/
+@media screen and (max-width: 759px) {
+	.lightbox-content {
+		border-width: 15px;
+		max-width: 95%;
+	}
+}
+
+@media screen and (max-height: 649px) {
+	.lightbox-content {
+		border-width: 15px;
+		max-height: 70%; /* to offset the strange border */
+	}
+	/* Push the hint button lower on short screens */
+	.lightbox-close-hint {
+		bottom: 20px;
+	}
+}
+
+.lightbox-hidden {
+	/* fade out */
+	-webkit-animation: ft-keyframes-hide 0.2s none 0s;
+	animation: ft-keyframes-hide 0.2s none 0s;
+}

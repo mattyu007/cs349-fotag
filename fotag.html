@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Fotag</title>
+    
+    <link rel="icon" href="favicon.ico" />
+    
+    <!--
+    All of your CSS must go in css/fotag.css. Do not add styles to individual elements.
+    All of your CSS must be your own -- you may not use third-party CSS, like Bootstrap.
+    -->
+    <link rel="stylesheet" href="css/fotag.css"/>
+    <style>
+        .marking-button {
+            float:right;
+        }
+        .marking-div-clear {
+            clear:both;
+        }
+    </style>
+</head>
+<body>
+
+<!-- This header can be replaced -->
+<!--<h1>Fotag!</h1>-->
+<!--Import, organize, and rate your photos!-->
+
+<div id="app-container">
+    <!--
+         An attachment point to place all of your dynamically created content. Do not remove or
+         rename this div.
+    -->
+<!--    <button class="btn" disabled>Disabled Standard Button</button>
+    <button class="btn">Standard Button</button>
+    <button class="btn btn-light" disabled>Disabled Light Button</button>
+    <button class="btn btn-light">Light Button</button>
+    <button class="btn btn-danger" disabled>Disabled Danger Button</button>
+    <button class="btn btn-danger">Danger Button</button>-->
+</div>
+
+<!-- A template for a file chooser, to select multiple files. See FileChooser in view.js. -->
+<template id="file-chooser">
+    <div class="ft-file-input-container">
+        Drag and drop some photos here to add them to Fotag, or
+        <span class="btn btn-file-input">click here to browse<input type="file" class="ft-file-input" name="file_results[]" multiple /></span>
+    </div>
+<!--    <output id="list"></output>-->
+</template>
+
+<!-- Template for image collection container -->
+<template id="image-collection-template">
+    <div class="ft-container"><div class="ft-empty-container">
+        <div class="ft-empty-title">Fotag lets you import, organize, and rate your photos.</div>
+        <div class="ft-empty-subtitle">You haven't added any photos yet.</div>
+    </div></div>
+</template>
+
+<!-- Template for the image item delete overlay -->
+<template id="image-item-delete-overlay-template">
+    <div class="ft-item-delete-icon nodisplay"></div>
+    <div class="ft-item-delete-overlay nodisplay">
+        <span class="lightbox-center"></span>
+        <div class="ft-item-delete-overlay-content"><div class="ft-item-delete-overlay-content-message">Remove this image from Fotag?</div><div><button class="btn btn-danger">Remove</button><button class="btn btn-light">Cancel</button></div></div>
+    </div>
+</template>
+
+<!-- A template for an image item -->
+<template id="image-item-template">
+    <div class="ft-item">
+        <div class="ft-item-image-container">
+            <img class="ft-item-image" src="unavailable.svg">
+        </div>
+        <div class="ft-item-metadata-container">
+            <div class="ft-item-caption"></div>
+            <div class="ft-item-caption-input-container nodisplay">
+                <input class="ft-item-caption-input" type="text" placeholder="image caption"></input>
+                <button class="btn ft-item-caption-save-btn">Save</button>
+                <button class="btn btn-light ft-item-caption-cancel-btn">Cancel</button>
+            </div>
+            <div class="ft-item-name"></div>
+            <div class="ft-item-date"></div>
+        </div>
+    </div>
+</template>
+
+<!-- Template for the ratings control -->
+<template id="ratings-template">
+    <div class="ft-item-rating">
+        <img class="ft-star ft-star-1" src="star-empty.svg"><img class="ft-star ft-star-2" src="star-empty.svg"><img class="ft-star ft-star-3" src="star-empty.svg"><img class="ft-star ft-star-4" src="star-empty.svg"><img class="ft-star ft-star-5" src="star-empty.svg">
+        <div class="ft-rating-caption hidden">Click to rate</div>
+    </div>
+</template>
+
+<!-- Template for toolbar -->
+<template id="toolbar-template">
+    <div class="ft-nav-fixed-top">
+        <div class="ft-nav-header">
+            Fotag
+        </div>
+        <div class="ft-nav-options">
+            <div class="ft-nav-options-subhead">
+                <span class="ft-nav-options-subhead-left">Filter</span>
+                <button class="ft-nav-options-subhead-right btn btn-light btn-small ft-nav-options-filter-clear-btn hidden">Show all</button>
+            </div>
+            <div class="ft-nav-options-items-rating"></div>
+        </div>
+        
+        <div class="ft-nav-options">
+            <div class="ft-nav-options-subhead">View</div>
+            <div class="ft-nav-options-items-view">
+                <img class="ft-nav-options-view" src="toolbar-grid-view.svg">
+                <img class="ft-nav-options-view" src="toolbar-list-view.svg">
+            </div>
+        </div>
+    </div>
+</template>
+
+<!-- Template for the lightbox -->
+<template id="lightbox-template">
+    <div class="lightbox"><span class="lightbox-center"></span><img class="lightbox-content" src="unavailable.svg"><div class="lightbox-close-hint">Click anywhere to close</div></div>
+</template>
+
+<!-- Keep this here so TAs can run your unit tests -->
+<div id="unit-tests">
+
+    <!-- This button is for marking purposes to test your architecture. Do not remove it-->
+    <button class="marking-button">Mark Me!</button>
+    <div class="marking-div-clear"></div>
+
+    <a href="unit_tests.html">Run Unit Tests</a>
+</div>
+
+<script src="js/ext/underscore.js"></script>
+<script src="js/model.js"></script>
+<script src="js/view.js"></script>
+<script src="js/fotag.js"></script>
+</body>
+</html>
